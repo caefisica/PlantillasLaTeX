@@ -1,0 +1,219 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Note:
+% Make sure to edit document variables in the Thesis.cls file
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[11pt, oneside]{Thesis} % The default font size and one-sided printing (no margin offsets)
+
+\graphicspath{{Figuras/}} % Specifies the directory where pictures are stored
+
+%\usepackage{natbib}
+\usepackage[square, numbers, comma, sort&compress]{natbib} % Use the natbib reference package - read up on this to edit the reference style; if you want text (e.g. Smith et al., 2012) for the in-text references (instead of numbers), remove 'numbers' 
+\usepackage[spanish]{babel} % If you want in english: remove this line
+\hypersetup{urlcolor=blue, colorlinks=true} % Colors hyperlinks in blue - change to black if annoying
+\title{\ttitle} % Defines the thesis title - don't touch this
+
+\begin{document}
+
+\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+
+\setstretch{1.3} % Line spacing of 1.3
+
+% Define the page headers using the FancyHdr package and set up for one-sided printing
+\fancyhead{} % Clears all page headers and footers
+\rhead{\thepage} % Sets the right side header to show the page number
+\lhead{} % Clears the left side page header
+
+\pagestyle{fancy} % Finally, use the "fancy" page style to implement the FancyHdr headers
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % New command to make the lines in the title page
+
+% PDF meta-data
+\hypersetup{pdftitle={\ttitle}}
+\hypersetup{pdfsubject=\subjectname}
+\hypersetup{pdfauthor=\authornames}
+\hypersetup{pdfkeywords=\keywordnames}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+	\begin{center}
+		
+		\textsc{\Large \univname}\\[0.5cm] % University name
+		\Large \text{Universidad del Perú, Decana de América}\\[0.4cm] %
+		\textsc{\Large Facultad de Ciencias Físicas}\\[0.4cm] 
+		\textsc{\Large Escuela Profesional de Física}\\[0.8cm] % Thesis type % 0.5 for ps
+		
+		\includegraphics[scale=0.25]{unmsm-logo.png}\\[0.7cm] % 
+		%{\LARGE \bfseries \ttitle}\\[0.6cm] % Thesis title
+		{\LARGE \bfseries Análisis de la Dinámica Hamiltoniana del Trompo en Coordenadas Generalizadas }\\[0.6cm] % Thesis title
+		\textsc{\Large Tesis}\\[0.3cm] 
+		\large \text{Para optar el Título Profesional de Licenciado en Física}\\[0.6cm] %
+		
+		\textsc{\Large Autor}\\[0.3cm] 
+		\href{http://www.tesista.biz}{Juan Pérez Pérez}\\[0.6cm] %  Author name 
+		
+		\textsc{\Large Asesor}\\[0.3cm] 
+		\href{https://ctivitae.concytec.gob.pe/appDirectorioCTI/VerDatosInvestigador.do?id_investigador=0017677}{Cesar Jimenez Tintaya}\\[2.2cm] % % Supervisor name 
+		
+		\large \text{Lima, Perú}\\[0.3cm]
+		\Large \text{2023}\\[0.3cm]
+		%{\large \today}\\[1.0cm] % Date
+		
+		\vfill
+	\end{center}
+	
+\end{titlepage}
+
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+\addtotoc{Resumen} % Add the "Abstract" page entry to the Contents
+
+\resumen{\addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
+	
+	El Perú se encuentra ubicado dentro del Cinturón Sísmico del Pacífico, por lo que es una de las zonas sísmicas más activas del mundo. De acuerdo a la teoría de los gaps sísmicos, es muy probable la ocurrencia de un sismo tsunamigénico en la región central del Perú. En esta investigación se propone desarrollar una metodología para obtener la distribución de la fuente sísmica para sismos tsunamigénicos a partir de la inversión de formas de onda de tsunami y datos geodésicos.
+	
+	Se plantea las aplicaciones a eventos sísmicos y tsunamis que han afectado el litoral costero peruano. Por ejemplo, el sismo y tsunami de Lima de 1940 (8.0 Mw), el sismo y tsunami de Huacho de 1966 (8.1 Mw), a partir de la inversión de 3 registros mareográficos. El sismo y maremoto de Camaná de 2001 (8.4 Mw) a partir de la inversión combinada de datos mareográficos y geodésicos. El sismo y maremoto de Pisco 2007 (8.0 Mw), a partir de la inversión de datos mareográficos. El sismo y maremoto de Chile 2014 (8.1 Mw) a partir de la inversión combinada de datos mareográficos y geodésicos. Se enfatiza la aplicación de la prueba de confiabilidad para evaluar la resolución y el rango de aplicación de los métodos sísmicos, mareográfico y geodésico.
+	
+	Se ha implementado un procedimiento numérico para el pronóstico de parámetros del tsunami (máxima altura y tiempo de arribo) a partir de una base de datos de fuentes sísmicas unitarias pre-simuladas.
+	
+	Los resultados de esta investigación permitirán obtener la distribución de las asperezas (zonas de mayor liberación de energía sísmica), lo cual permitirá desarrollar planes de prevención, previsión y mitigación de desastres por fenómenos naturales.
+	
+	\textbf{Palabras clave}: clave1, clave2, clave3.
+	
+	\clearpage % Start a new page
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\setstretch{1.3} % Reset the line-spacing to 1.3 for body text (if it has changed)
+
+\acknowledgements{\addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
+
+The acknowledgements and the people to thank go here, don't forget to include your project advisor\ldots
+}
+\clearpage % Start a new page
+
+%----------------------------------------------------------------------------------------
+%	LIST OF CONTENTS/FIGURES/TABLES PAGES
+%----------------------------------------------------------------------------------------
+
+\pagestyle{fancy} % The page style headers have been "empty" all this time, now use the "fancy" headers as defined before to bring them back
+
+\lhead{\emph{Índice general}} % Set the left side page header to "Contents"
+\tableofcontents % Write out the Table of Contents
+
+\lhead{\emph{Índice de figuras}} % Set the left side page header to "List of Figures"
+\listoffigures % Write out the List of Figures
+
+\lhead{\emph{Índice de cuadros}} % Set the left side page header to "List of Tables"
+\listoftables % Write out the List of Tables
+
+%----------------------------------------------------------------------------------------
+%	ABBREVIATIONS
+%----------------------------------------------------------------------------------------
+
+\clearpage % Start a new page
+
+\setstretch{1.5} % Set the line spacing to 1.5, this makes the following tables easier to read
+
+\lhead{\emph{Abreviaciones}} % Set the left side page header to "Abbreviations"
+\listofsymbols{ll} % Include a list of Abbreviations (a table of two columns)
+{
+\textbf{LAH} & \textbf{L}ist \textbf{A}bbreviations \textbf{H}ere \\
+%\textbf{Acronym} & \textbf{W}hat (it) \textbf{S}tands \textbf{F}or \\
+}
+
+%----------------------------------------------------------------------------------------
+%	DEDICATION
+%----------------------------------------------------------------------------------------
+
+\setstretch{1.3} % Return the line spacing back to 1.3
+
+\pagestyle{empty} % Page style needs to be empty for this page
+
+\dedicatory{Dedicado a mis Padres ... \ldots} % Dedication text
+
+\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+
+\mainmatter % Begin numeric (1,2,3...) page numbering
+
+\pagestyle{fancy} % Return the page headers back to the "fancy" style
+
+% Include the chapters of the thesis as separate files from the Chapters folder
+% Uncomment the lines as you write the chapters
+
+\input{Capitulos/Capitulo1}
+\input{Capitulos/Capitulo2} 
+\input{Capitulos/Capitulo3}
+\input{Capitulos/Capitulo4} 
+\input{Capitulos/Capitulo5} 
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - APPENDICES
+%----------------------------------------------------------------------------------------
+\renewcommand{\appendixname}{Anexo}
+%\renewcommand{\appendixtocname}{Anexos}
+%\renewcommand{\appendixpagename}{Anexos}
+
+\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+
+\appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
+
+% Include the appendices of the thesis as separate files from the Appendices folder
+% Uncomment the lines as you write the Appendices
+
+\input{Anexos/AppendixA}
+\input{Anexos/AppendixB}
+%\input{Appendices/AppendixC}
+
+\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+
+\backmatter
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\label{Bibliography}
+
+\lhead{\emph{Referencias}} % Change the page header to say "Bibliography"
+
+\renewcommand{\bibname}{Referencias}
+
+%\bibliographystyle{aps-nameyear}  % American Physical Society (APS) style, author-year citations
+%\bibliographystyle{apalike}
+\bibliographystyle{unsrtnat}
+
+\bibliography{referencias.bib}
+
+%\begin{thebibliography}{}
+%\bibitem{1} N. Apellido. Titulo del artículo. Rev. Inv. Fis., \textbf{21}(1), 18-26 (2018).
+
+%\bibitem{2} H. Benny y J. Pérez. \emph{Título de Libro}. Editorial San Marcos, Lima (2018).
+
+%\bibitem{3} Y. Okada. Internal deformation in a half space. Bull. Seismol. Soc.Am. \textbf{82}(2) 1018-1040 (1992).
+
+%\bibitem{4} M. Bazant and J. Bush. Beyond six feet: A guideline to limit indoor airborne transmission of COVID-19, doi: \url{http://doi.org/10.1101/2020.08.26.20182824}.
+
+%\bibitem{5} M. Kikuchi y H. Kanamori. \emph{Notes on Teleseismic Body-Wave Inversion Program} \url{http://www.eri.u-tokyo.ac.jp/ETAL/KIKUCHI} (2003).
+
+%\bibitem{6} H. Pulker. \emph{Coatings On Glass}. Elsevier Science, 2nd edition. Amsterdam (1999).
+
+%\end{thebibliography}
+
+\end{document}  
+
